@@ -7,7 +7,7 @@ live rendered result, styled by a single shared stylesheet.
 ## Authors
 
 - Asilbek Ermatov
-- Partner: ___
+- Partner: Ibrohim Xudoyberdiyev
 
 ## Pages
 
