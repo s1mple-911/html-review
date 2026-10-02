@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Tables</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html" class="active">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Tables</h1>
+    <div class="page-intro">
+      <p>
+        HTML tables organize tabular data into rows and columns using
+        <code>&lt;table&gt;</code> and its structural children —
+        <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+        <code>&lt;tfoot&gt;</code> — plus cell and grouping elements such as
+        <code>&lt;colgroup&gt;</code>.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#table-tag">&lt;table&gt; / &lt;caption&gt;</a></li>
+        <li><a href="#thead-tag">&lt;thead&gt;</a></li>
+        <li><a href="#tbody-tag">&lt;tbody&gt;</a></li>
+        <li><a href="#tfoot-tag">&lt;tfoot&gt;</a></li>
+        <li><a href="#tr-tag">&lt;tr&gt;</a></li>
+        <li><a href="#th-tag">&lt;th&gt;</a></li>
+        <li><a href="#td-tag">&lt;td&gt;</a></li>
+        <li><a href="#colgroup-tag">&lt;colgroup&gt;</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="table-tag">
+      <h2>&lt;table&gt; / &lt;caption&gt; — Table and Its Title</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;table&gt;</code> element wraps an entire data table; an optional <code>&lt;caption&gt;</code> provides its title, read first by screen readers.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;table&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Hooks used by CSS, e.g. to apply the striped-row styling used on this page.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Weekly Study Schedule&lt;/caption&gt;
+  ...
+&lt;/table&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>See the full worked example below in the <a href="#tfoot-tag">&lt;tfoot&gt;</a> section — it combines <code>&lt;table&gt;</code> and <code>&lt;caption&gt;</code> with every other tag on this page.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="thead-tag">
+      <h2>&lt;thead&gt; — Table Header Group</h2>
+      <h3>Definition</h3>
+      <p>Groups the header row(s) of a table, letting browsers (and CSS) style the heading band separately from the data.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;thead&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;thead&gt;
+  &lt;tr&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Monday&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Shown as the blue heading row of the schedule table below.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="tbody-tag">
+      <h2>&lt;tbody&gt; — Table Body Group</h2>
+      <h3>Definition</h3>
+      <p>Groups the main block of data rows, separate from the header and footer, so each part can be styled or scrolled independently.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;tbody&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;tbody&gt;
+  &lt;tr&gt;&lt;td&gt;Math&lt;/td&gt;&lt;td&gt;9:00&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Shown as the striped data rows of the schedule table below.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="tfoot-tag">
+      <h2>&lt;tfoot&gt; — Table Footer Group</h2>
+      <h3>Definition</h3>
+      <p>Groups summary row(s) such as totals, shown at the bottom of the table regardless of where it is written in the HTML source.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;tfoot&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Weekly Study Schedule&lt;/caption&gt;
+  &lt;colgroup&gt;
+    &lt;col&gt;
+    &lt;col span="2"&gt;
+  &lt;/colgroup&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Subject&lt;/th&gt;
+      &lt;th scope="col"&gt;Monday&lt;/th&gt;
+      &lt;th scope="col"&gt;Tuesday&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Morning&lt;/th&gt;
+      &lt;td colspan="2"&gt;Mathematics (2 hours)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row" rowspan="2"&gt;Afternoon&lt;/th&gt;
+      &lt;td&gt;Physics&lt;/td&gt;
+      &lt;td&gt;Chemistry&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Lab session&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td colspan="2"&gt;6 hours&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <table>
+          <caption>Weekly Study Schedule</caption>
+          <colgroup>
+            <col>
+            <col span="2">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Subject</th>
+              <th scope="col">Monday</th>
+              <th scope="col">Tuesday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Morning</th>
+              <td colspan="2">Mathematics (2 hours)</td>
+            </tr>
+            <tr>
+              <th scope="row" rowspan="2">Afternoon</th>
+              <td>Physics</td>
+              <td>Chemistry</td>
+            </tr>
+            <tr>
+              <td colspan="2">Lab session</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td colspan="2">6 hours</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="tr-tag">
+      <h2>&lt;tr&gt; — Table Row</h2>
+      <h3>Definition</h3>
+      <p>Represents one horizontal row of a table, holding a sequence of <code>&lt;th&gt;</code> and/or <code>&lt;td&gt;</code> cells.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;tr&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling, e.g. zebra striping.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;tr&gt;
+  &lt;th scope="row"&gt;Morning&lt;/th&gt;
+  &lt;td colspan="2"&gt;Mathematics (2 hours)&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>See the "Morning" row of the schedule table above.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="th-tag">
+      <h2>&lt;th&gt; — Header Cell</h2>
+      <h3>Definition</h3>
+      <p>Defines a header cell for a row or column; browsers render it bold and centered by default, and the <code>scope</code> attribute links it to the cells it describes.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;th&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>scope</td><td>"col" if it heads a column, "row" if it heads a row — improves screen-reader navigation.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;th scope="col"&gt;Subject&lt;/th&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>See the "Subject", "Monday" and "Tuesday" column headers in the schedule table above.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="td-tag">
+      <h2>&lt;td&gt; — Data Cell</h2>
+      <h3>Definition</h3>
+      <p>Defines an ordinary data cell inside a table row.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;td&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>colspan</td><td>Makes the cell span across multiple columns.</td></tr>
+          <tr><td>rowspan</td><td>Makes the cell span across multiple rows.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;td colspan="2"&gt;Mathematics (2 hours)&lt;/td&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>See the merged "Mathematics (2 hours)" cell spanning two columns in the schedule table above.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="colgroup-tag">
+      <h2>&lt;colgroup&gt; / &lt;col&gt; — Column Grouping</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;colgroup&gt;</code> groups one or more <code>&lt;col&gt;</code> elements so whole columns can be styled or sized at once, without touching every cell.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;colgroup&gt; and &lt;col&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>span</td><td>Number of columns a single &lt;col&gt; should apply to.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;colgroup&gt;
+  &lt;col&gt;
+  &lt;col span="2"&gt;
+&lt;/colgroup&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Defines the three columns of the schedule table above before any rows are drawn.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

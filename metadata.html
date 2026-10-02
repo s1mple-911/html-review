@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lab Work 3: a nine-page HTML5 review site covering structure, text, media, lists, tables, forms, multimedia, semantics and metadata.">
+  <meta name="author" content="Asilbek Ermatov">
+  <meta name="keywords" content="HTML, HTML5, web development, lab work, review, tutorial">
+  <title>HTML Review — Metadata</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- Open Graph tags: control how this page previews when shared on social platforms -->
+  <meta property="og:title" content="HTML Review — Lab Work 3">
+  <meta property="og:description" content="A nine-page HTML5 review site with definitions, attributes, code and live results for every major tag.">
+  <meta property="og:image" content="images/sample.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html" class="active">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Metadata</h1>
+    <div class="page-intro">
+      <p>
+        Metadata tags live in the <code>&lt;head&gt;</code> and never render
+        as visible page content, yet they control how a browser,
+        search engine or social network understands and displays the page.
+        This page's own <code>&lt;head&gt;</code> (view the page source) is
+        used as the live example throughout.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#meta-charset">&lt;meta charset&gt;</a></li>
+        <li><a href="#meta-viewport">&lt;meta viewport&gt;</a></li>
+        <li><a href="#meta-seo">&lt;meta description/author/keywords&gt;</a></li>
+        <li><a href="#title-tag">&lt;title&gt;</a></li>
+        <li><a href="#link-tag">&lt;link rel="stylesheet"/"icon"&gt;</a></li>
+        <li><a href="#base-tag">&lt;base&gt;</a></li>
+        <li><a href="#og-tag">Open Graph meta tags</a></li>
+        <li><a href="#script-defer">&lt;script defer&gt;</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="meta-charset">
+      <h2>&lt;meta charset&gt; — Character Encoding</h2>
+      <h3>Definition</h3>
+      <p>Declares the character encoding of the document, almost always UTF-8, so text (including non-Latin letters) renders correctly.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;meta charset&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>charset</td><td>Names the text encoding, e.g. "UTF-8".</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Invisible, but required: it is the very first tag inside this page's own <code>&lt;head&gt;</code>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="meta-viewport">
+      <h2>&lt;meta viewport&gt; — Responsive Scaling</h2>
+      <h3>Definition</h3>
+      <p>Tells mobile browsers to match the page's width to the device's screen width instead of zooming out to a desktop-sized layout.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;meta viewport&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>name</td><td>Always "viewport" for this tag.</td></tr>
+          <tr><td>content</td><td>Holds the actual settings, e.g. "width=device-width, initial-scale=1.0".</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Invisible, but try resizing the browser window — the responsive layout on every page of this site depends on this tag.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="meta-seo">
+      <h2>&lt;meta description/author/keywords&gt; — Document Info</h2>
+      <h3>Definition</h3>
+      <p>These <code>&lt;meta&gt;</code> variants describe the page itself: a short summary for search results, the content's author, and (historically) topical keywords.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of these &lt;meta&gt; tags</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>name="description"</td><td>The summary search engines often show under the page title.</td></tr>
+          <tr><td>name="author"</td><td>Names the document's author.</td></tr>
+          <tr><td>name="keywords"</td><td>A comma-separated list of relevant topics (largely ignored by modern search engines, but still part of the spec).</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;meta name="description" content="A nine-page HTML5 review site."&gt;
+&lt;meta name="author" content="Asilbek Ermatov"&gt;
+&lt;meta name="keywords" content="HTML, HTML5, web development, lab work"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Invisible on the page, but present in this page's <code>&lt;head&gt;</code> — view the page source to find all three.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="title-tag">
+      <h2>&lt;title&gt; — Document Title</h2>
+      <h3>Definition</h3>
+      <p>Sets the text shown in the browser tab, in bookmark lists, and as the default clickable headline in search results.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;title&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>(none)</td><td>&lt;title&gt; only contains plain text.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;title&gt;HTML Review — Metadata&lt;/title&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Look at this page's browser tab — it reads "HTML Review — Metadata".</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="link-tag">
+      <h2>&lt;link rel="stylesheet"/"icon"&gt; — External Resources</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;link&gt;</code> connects the document to an external resource. With <code>rel="stylesheet"</code> it loads CSS; with <code>rel="icon"</code> it sets the browser tab's favicon.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;link&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>rel</td><td>The relationship to the current document, e.g. "stylesheet" or "icon".</td></tr>
+          <tr><td>href</td><td>Path or URL of the linked resource.</td></tr>
+          <tr><td>type</td><td>The resource's MIME type, e.g. "image/svg+xml" for an SVG favicon.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;link rel="icon" href="images/logo.svg" type="image/svg+xml"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This page's styling and the logo in its browser tab both come from these two <code>&lt;link&gt;</code> tags.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="base-tag">
+      <h2>&lt;base&gt; — Default Relative URL</h2>
+      <h3>Definition</h3>
+      <p>Sets a default base URL that every relative <code>href</code>/<code>src</code> in the document resolves against. At most one <code>&lt;base&gt;</code> is allowed per page.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;base&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>href</td><td>The base URL relative links are resolved against.</td></tr>
+          <tr><td>target</td><td>The default target window/frame for every link on the page.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;base href="https://example.com/html-review/"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Not actually applied on this page, since it would redirect every relative link on this live site to <code>example.com</code> — shown here as a static code example only.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="og-tag">
+      <h2>Open Graph Meta Tags — <code>og:*</code></h2>
+      <h3>Definition</h3>
+      <p>A <code>property</code>-based set of <code>&lt;meta&gt;</code> tags (the Open Graph protocol) that controls the title, description and image shown when this page is shared on social platforms like Facebook or Telegram.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of Open Graph &lt;meta&gt; tags</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>property</td><td>The Open Graph key, e.g. "og:title", "og:description", "og:image".</td></tr>
+          <tr><td>content</td><td>The value for that key.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;meta property="og:title" content="HTML Review — Lab Work 3"&gt;
+&lt;meta property="og:description" content="A nine-page HTML5 review site."&gt;
+&lt;meta property="og:image" content="images/sample.png"&gt;
+&lt;meta property="og:type" content="website"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Invisible on the page itself, but genuinely present in this page's <code>&lt;head&gt;</code> — paste this page's URL into a chat app that generates link previews to see them in action.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="script-defer">
+      <h2>&lt;script defer&gt; — Deferred External Script</h2>
+      <h3>Definition</h3>
+      <p>Loads an external JavaScript file in parallel with the page but delays running it until after the HTML has finished parsing, keeping first render fast and avoiding "document not ready" errors.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;script&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>src</td><td>Path or URL of the external JavaScript file.</td></tr>
+          <tr><td>defer</td><td>Runs the script only after the HTML document has been fully parsed, in source order.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;script src="js/app.js" defer&gt;&lt;/script&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Shown as a code reference only — this project does not ship a separate JavaScript file; the one inline script used on <a href="media.html">media.html</a> is reserved for the <code>&lt;canvas&gt;</code> drawing example, as allowed by the assignment brief.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

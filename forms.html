@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Forms</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html" class="active">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Forms</h1>
+    <div class="page-intro">
+      <p>
+        HTML forms collect user input through <code>&lt;form&gt;</code> and a
+        family of controls: labelled text/number/date fields, choices,
+        files, and buttons. This page's form does not submit to a real
+        server — <code>action="#"</code> is a placeholder for an academic
+        demo.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#form-tag">&lt;form&gt;</a></li>
+        <li><a href="#label-tag">&lt;label&gt;</a></li>
+        <li><a href="#input-tag">&lt;input&gt; types</a></li>
+        <li><a href="#textarea-tag">&lt;textarea&gt;</a></li>
+        <li><a href="#select-tag">&lt;select&gt; / &lt;option&gt; / &lt;optgroup&gt;</a></li>
+        <li><a href="#button-tag">&lt;button&gt;</a></li>
+        <li><a href="#fieldset-tag">&lt;fieldset&gt; / &lt;legend&gt;</a></li>
+        <li><a href="#full-form">Full Form Example</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="form-tag">
+      <h2>&lt;form&gt; — Form Container</h2>
+      <h3>Definition</h3>
+      <p>Wraps a group of controls that are submitted together to a server.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;form&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>action</td><td>The URL the form data is sent to when submitted.</td></tr>
+          <tr><td>method</td><td>HTTP method used to send the data, typically "get" or "post".</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;form action="#" method="get"&gt;
+  ...
+&lt;/form&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The complete form at the bottom of this page is one <code>&lt;form action="#" method="get"&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="label-tag">
+      <h2>&lt;label&gt; — Field Label</h2>
+      <h3>Definition</h3>
+      <p>Attaches a readable caption to a form control; clicking the label focuses or toggles the associated control.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;label&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>for</td><td>Matches the <code>id</code> of the control it labels.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;label for="demo-name"&gt;Name&lt;/label&gt;
+&lt;input id="demo-name" type="text"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <label for="demo-name">Name</label>
+        <input id="demo-name" type="text">
+      </div>
+    </section>
+
+    <section class="tag-demo" id="input-tag">
+      <h2>&lt;input&gt; — Input Control (multiple types)</h2>
+      <h3>Definition</h3>
+      <p>A single-line control whose behaviour depends entirely on its <code>type</code> attribute — text, email, password, number, date, checkbox, radio, file, range or color are shown below.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;input&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>type</td><td>Selects the control's behaviour and look (text, email, checkbox, etc.).</td></tr>
+          <tr><td>placeholder</td><td>Faint hint text shown inside an empty field.</td></tr>
+          <tr><td>required</td><td>Prevents form submission until the field has a value.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;input type="text" placeholder="Jane Doe" required&gt;
+&lt;input type="email" placeholder="jane@example.com"&gt;
+&lt;input type="password" placeholder="Password"&gt;
+&lt;input type="number" min="0" max="10"&gt;
+&lt;input type="date"&gt;
+&lt;input type="checkbox" checked&gt;
+&lt;input type="radio" name="demo-radio" checked&gt;
+&lt;input type="file"&gt;
+&lt;input type="range" min="0" max="100"&gt;
+&lt;input type="color" value="#2b6cb0"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p><input type="text" placeholder="Jane Doe" required></p>
+        <p><input type="email" placeholder="jane@example.com"></p>
+        <p><input type="password" placeholder="Password"></p>
+        <p><input type="number" min="0" max="10"></p>
+        <p><input type="date"></p>
+        <p><input type="checkbox" checked> Subscribe</p>
+        <p><input type="radio" name="demo-radio" checked> Option A</p>
+        <p><input type="file"></p>
+        <p><input type="range" min="0" max="100"></p>
+        <p><input type="color" value="#2b6cb0"></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="textarea-tag">
+      <h2>&lt;textarea&gt; — Multi-line Text</h2>
+      <h3>Definition</h3>
+      <p>A resizable, multi-line plain-text input, useful for comments or free-form descriptions.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;textarea&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>rows / cols</td><td>Visible height and width of the text area, in text lines/characters.</td></tr>
+          <tr><td>placeholder</td><td>Faint hint text shown when the area is empty.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;textarea rows="3" cols="30" placeholder="Write your feedback..."&gt;&lt;/textarea&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <textarea rows="3" cols="30" placeholder="Write your feedback..."></textarea>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="select-tag">
+      <h2>&lt;select&gt; / &lt;option&gt; / &lt;optgroup&gt; — Drop-down List</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;select&gt;</code> creates a drop-down of <code>&lt;option&gt;</code> choices, which can be grouped under an <code>&lt;optgroup&gt;</code> label.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;select&gt;, &lt;option&gt;, &lt;optgroup&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>name</td><td>Key the selected value is submitted under.</td></tr>
+          <tr><td>selected</td><td>On an &lt;option&gt;, pre-selects it when the page loads.</td></tr>
+          <tr><td>label</td><td>On an &lt;optgroup&gt;, the heading shown above its options.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;select name="language"&gt;
+  &lt;optgroup label="Markup"&gt;
+    &lt;option value="html" selected&gt;HTML&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Programming"&gt;
+    &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+    &lt;option value="py"&gt;Python&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <select name="language">
+          <optgroup label="Markup">
+            <option value="html" selected>HTML</option>
+          </optgroup>
+          <optgroup label="Programming">
+            <option value="js">JavaScript</option>
+            <option value="py">Python</option>
+          </optgroup>
+        </select>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="button-tag">
+      <h2>&lt;button&gt; — Button</h2>
+      <h3>Definition</h3>
+      <p>A clickable control; its <code>type</code> determines whether it submits the form, resets it, or does nothing by default.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;button&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>type</td><td>"submit" sends the form, "reset" clears it, "button" does nothing on its own.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <button type="button">Send (demo button)</button>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="fieldset-tag">
+      <h2>&lt;fieldset&gt; / &lt;legend&gt; — Grouped Controls</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;fieldset&gt;</code> draws a box around a related group of controls; <code>&lt;legend&gt;</code> gives that group a caption.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;fieldset&gt; and &lt;legend&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>disabled</td><td>On &lt;fieldset&gt;, disables every control nested inside it.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Contact method&lt;/legend&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; Email&lt;/label&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; Phone&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <fieldset>
+          <legend>Contact method</legend>
+          <label><input type="radio" name="contact-demo"> Email</label>
+          <label><input type="radio" name="contact-demo"> Phone</label>
+        </fieldset>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="full-form">
+      <h2>Full Form Example</h2>
+      <h3>Definition</h3>
+      <p>All the controls above combined into one coherent registration form, including <code>required</code> and <code>placeholder</code> in context.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Key attributes used together</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>required</td><td>Blocks submission of the Full Name and Email fields until filled in.</td></tr>
+          <tr><td>placeholder</td><td>Shows example input for Full Name and Email.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;form action="#" method="get"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Workshop registration&lt;/legend&gt;
+    &lt;label for="full-name"&gt;Full name&lt;/label&gt;
+    &lt;input id="full-name" type="text" placeholder="Jane Doe" required&gt;
+
+    &lt;label for="full-email"&gt;Email&lt;/label&gt;
+    &lt;input id="full-email" type="email" placeholder="jane@example.com" required&gt;
+
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <form action="#" method="get">
+          <fieldset>
+            <legend>Workshop registration</legend>
+            <div>
+              <label for="full-name">Full name</label>
+              <input id="full-name" type="text" placeholder="Jane Doe" required>
+            </div>
+            <div>
+              <label for="full-email">Email</label>
+              <input id="full-email" type="email" placeholder="jane@example.com" required>
+            </div>
+            <button type="submit">Register</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Links, Images, Video &amp; Audio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html" class="active">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Links, Images, Video &amp; Audio</h1>
+    <div class="page-intro">
+      <p>
+        This page reviews the tags used to connect pages and embed media:
+        hyperlinks with <code>&lt;a&gt;</code>, raster images with
+        <code>&lt;img&gt;</code>, and the <code>&lt;video&gt;</code> /
+        <code>&lt;audio&gt;</code> elements together with their
+        <code>&lt;source&gt;</code> children. All media files are real
+        assets from the <code>images/</code> folder of this project.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#a-tag">&lt;a&gt;</a></li>
+        <li><a href="#img-tag">&lt;img&gt;</a></li>
+        <li><a href="#video-tag">&lt;video&gt;</a></li>
+        <li><a href="#audio-tag">&lt;audio&gt;</a></li>
+        <li><a href="#source-tag">&lt;source&gt;</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="a-tag">
+      <h2>&lt;a&gt; — Anchor / Hyperlink</h2>
+      <h3>Definition</h3>
+      <p>Creates a hyperlink to another page, an anchor within the same page, an external site, or a downloadable file.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;a&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>href</td><td>The destination URL or path the link points to.</td></tr>
+          <tr><td>target</td><td>Where to open the link, e.g. "_blank" for a new tab.</td></tr>
+          <tr><td>rel</td><td>Describes the relationship to the target; "noopener noreferrer" is a security best practice for target="_blank".</td></tr>
+          <tr><td>download</td><td>Tells the browser to download the linked file instead of navigating to it.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;a href="index.html"&gt;Back to Home&lt;/a&gt;
+&lt;a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"&gt;
+  W3C website (new tab)
+&lt;/a&gt;
+&lt;a href="images/sample.png" download&gt;Download sample.png&lt;/a&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p><a href="index.html">Back to Home</a></p>
+        <p><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C website (new tab)</a></p>
+        <p><a href="images/sample.png" download>Download sample.png</a></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="img-tag">
+      <h2>&lt;img&gt; — Image</h2>
+      <h3>Definition</h3>
+      <p>Embeds a raster or vector image in the page. It is a void (self-closing) element.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;img&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>src</td><td>Path or URL of the image file to display.</td></tr>
+          <tr><td>alt</td><td>Text alternative shown if the image fails to load and read by screen readers.</td></tr>
+          <tr><td>width / height</td><td>Reserve space for the image before it loads, preventing layout shift.</td></tr>
+          <tr><td>loading</td><td>"lazy" defers loading off-screen images until the user scrolls near them.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;img src="images/sample.png" alt="Generated sample gradient card"
+     width="320" height="180" loading="lazy"&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <img src="images/sample.png" alt="Generated sample gradient card" width="320" height="180" loading="lazy">
+      </div>
+    </section>
+
+    <section class="tag-demo" id="video-tag">
+      <h2>&lt;video&gt; — Video Player</h2>
+      <h3>Definition</h3>
+      <p>Embeds a video with native browser playback controls. It can hold one or more <code>&lt;source&gt;</code> children for different file formats.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;video&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>controls</td><td>Shows the browser's built-in play/pause/volume bar.</td></tr>
+          <tr><td>autoplay</td><td>Starts playback automatically (requires <code>muted</code> in most browsers).</td></tr>
+          <tr><td>muted</td><td>Starts the video with no sound, allowing autoplay.</td></tr>
+          <tr><td>loop</td><td>Restarts the video automatically once it ends.</td></tr>
+          <tr><td>poster</td><td>Image shown before playback starts.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;video controls muted loop poster="images/sample.png" width="320"&gt;
+  &lt;source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <video controls muted loop poster="images/sample.png" width="320">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p><small>No local ffmpeg was available to render images/sample.mp4 — see images/README.txt for details and how to switch to a fully local file.</small></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="audio-tag">
+      <h2>&lt;audio&gt; — Audio Player</h2>
+      <h3>Definition</h3>
+      <p>Embeds a sound clip with native browser playback controls, using the same <code>&lt;source&gt;</code> mechanism as video.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;audio&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>controls</td><td>Shows the browser's built-in play/pause/volume bar.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="images/tone.wav" type="audio/wav"&gt;
+  Your browser does not support the audio tag.
+&lt;/audio&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <audio controls>
+          <source src="images/tone.wav" type="audio/wav">
+          Your browser does not support the audio tag.
+        </audio>
+        <p><small>2-second, 440 Hz tone generated with Python's <code>wave</code> module.</small></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="source-tag">
+      <h2>&lt;source&gt; — Media Source</h2>
+      <h3>Definition</h3>
+      <p>Specifies one candidate media file for a parent <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code> or <code>&lt;picture&gt;</code> element; the browser picks the first one it can play.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;source&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>src</td><td>Path or URL to the media file.</td></tr>
+          <tr><td>type</td><td>The file's MIME type, letting the browser skip formats it cannot play.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="images/tone.wav" type="audio/wav"&gt;
+&lt;/audio&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>See the rendered <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> players above — both use <code>&lt;source&gt;</code> internally.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Lists</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html" class="active">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Lists</h1>
+    <div class="page-intro">
+      <p>
+        HTML offers three list types: unordered (<code>&lt;ul&gt;</code>),
+        ordered (<code>&lt;ol&gt;</code>) and description lists
+        (<code>&lt;dl&gt;</code>). This page reviews each one, their list
+        items, and how lists can be nested inside one another.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#ul-tag">&lt;ul&gt;</a></li>
+        <li><a href="#ol-tag">&lt;ol&gt;</a></li>
+        <li><a href="#li-tag">&lt;li&gt;</a></li>
+        <li><a href="#dl-tag">&lt;dl&gt; / &lt;dt&gt; / &lt;dd&gt;</a></li>
+        <li><a href="#nested-list">Nested Lists</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="ul-tag">
+      <h2>&lt;ul&gt; — Unordered List</h2>
+      <h3>Definition</h3>
+      <p>Groups a set of list items with no inherent order; browsers render each item with a bullet by default.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;ul&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Hooks used by CSS to change bullet style or spacing.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="ol-tag">
+      <h2>&lt;ol&gt; — Ordered List</h2>
+      <h3>Definition</h3>
+      <p>Groups list items that follow a meaningful sequence, numbered automatically by the browser.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;ol&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>type</td><td>Numbering style: "1" (default), "A", "a", "I" or "i".</td></tr>
+          <tr><td>start</td><td>The number the list should begin counting from.</td></tr>
+          <tr><td>reversed</td><td>Counts the list down instead of up.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;ol type="A" start="3"&gt;
+  &lt;li&gt;Third item, labeled C&lt;/li&gt;
+  &lt;li&gt;Fourth item, labeled D&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol reversed&gt;
+  &lt;li&gt;Gold&lt;/li&gt;
+  &lt;li&gt;Silver&lt;/li&gt;
+  &lt;li&gt;Bronze&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <ol type="A" start="3">
+          <li>Third item, labeled C</li>
+          <li>Fourth item, labeled D</li>
+        </ol>
+        <ol reversed>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Bronze</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="li-tag">
+      <h2>&lt;li&gt; — List Item</h2>
+      <h3>Definition</h3>
+      <p>Represents one entry inside a <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> or <code>&lt;menu&gt;</code> list.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;li&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>value</td><td>Inside an &lt;ol&gt;, overrides the automatic number for that item and all items after it.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;ol&gt;
+  &lt;li value="5"&gt;Jumps to five&lt;/li&gt;
+  &lt;li&gt;Continues as six&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <ol>
+          <li value="5">Jumps to five</li>
+          <li>Continues as six</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="dl-tag">
+      <h2>&lt;dl&gt; / &lt;dt&gt; / &lt;dd&gt; — Description List</h2>
+      <h3>Definition</h3>
+      <p>A description list (<code>&lt;dl&gt;</code>) pairs terms (<code>&lt;dt&gt;</code>) with their descriptions (<code>&lt;dd&gt;</code>) — ideal for glossaries or key/value data.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling; no element-specific attributes exist.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <dl>
+          <dt>HTML</dt>
+          <dd>HyperText Markup Language</dd>
+          <dt>CSS</dt>
+          <dd>Cascading Style Sheets</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="nested-list">
+      <h2>Nested Lists — &lt;ul&gt; Inside &lt;ol&gt;</h2>
+      <h3>Definition</h3>
+      <p>A list item can itself contain a whole new list, letting you build multi-level outlines such as a table of contents or a recipe with sub-steps.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes relevant to nesting</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>(inherited)</td><td>The inner list uses the same attributes (type, start, reversed, value) independently of its parent.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;ol&gt;
+  &lt;li&gt;Frontend
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backend&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <ol>
+          <li>Frontend
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </li>
+          <li>Backend</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

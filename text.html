@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Text Formatting</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html" class="active">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Text Formatting</h1>
+    <div class="page-intro">
+      <p>
+        This page reviews the inline and block tags HTML provides for
+        formatting text: line breaks, emphasis, highlighting, quotations and
+        inline code. Each tag below includes a definition, its attributes,
+        the raw code and the rendered result.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#p-tag">&lt;p&gt;</a></li>
+        <li><a href="#br-tag">&lt;br&gt;</a></li>
+        <li><a href="#hr-tag">&lt;hr&gt;</a></li>
+        <li><a href="#strong-tag">&lt;strong&gt;</a></li>
+        <li><a href="#em-tag">&lt;em&gt;</a></li>
+        <li><a href="#b-tag">&lt;b&gt;</a></li>
+        <li><a href="#i-tag">&lt;i&gt;</a></li>
+        <li><a href="#u-tag">&lt;u&gt;</a></li>
+        <li><a href="#mark-tag">&lt;mark&gt;</a></li>
+        <li><a href="#small-tag">&lt;small&gt;</a></li>
+        <li><a href="#sub-sup-tag">&lt;sub&gt; / &lt;sup&gt;</a></li>
+        <li><a href="#blockquote-tag">&lt;blockquote&gt;</a></li>
+        <li><a href="#q-tag">&lt;q&gt;</a></li>
+        <li><a href="#code-tag">&lt;code&gt;</a></li>
+        <li><a href="#pre-tag">&lt;pre&gt;</a></li>
+        <li><a href="#abbr-tag">&lt;abbr&gt;</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="p-tag">
+      <h2>&lt;p&gt; — Paragraph</h2>
+      <h3>Definition</h3>
+      <p>Defines a paragraph of text. Browsers automatically add vertical spacing before and after each paragraph.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;p&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Hooks for styling an individual paragraph with CSS.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;First paragraph.&lt;/p&gt;
+&lt;p&gt;Second paragraph.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>First paragraph.</p>
+        <p>Second paragraph.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="br-tag">
+      <h2>&lt;br&gt; — Line Break</h2>
+      <h3>Definition</h3>
+      <p>Inserts a single line break inside text, without starting a new paragraph. It is a void (self-closing) element.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;br&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>(none)</td><td>&lt;br&gt; takes no attributes; it is purely a line-break marker.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Line one&lt;br&gt;Line two&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Line one<br>Line two</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="hr-tag">
+      <h2>&lt;hr&gt; — Thematic Break</h2>
+      <h3>Definition</h3>
+      <p>Draws a horizontal rule that marks a thematic shift between sections of content, such as a change of topic.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;hr&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>(none commonly used)</td><td>&lt;hr&gt; is a void element styled only through CSS (e.g. border, width).</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Before the break.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;After the break.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Before the break.</p>
+        <hr>
+        <p>After the break.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="strong-tag">
+      <h2>&lt;strong&gt; — Strong Importance</h2>
+      <h3>Definition</h3>
+      <p>Marks text as having strong importance; browsers render it bold, and assistive technology announces it with added emphasis.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;strong&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling beyond the default bold weight.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;This step is &lt;strong&gt;mandatory&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This step is <strong>mandatory</strong>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="em-tag">
+      <h2>&lt;em&gt; — Emphasis</h2>
+      <h3>Definition</h3>
+      <p>Marks text with stress emphasis; browsers render it in italics, changing the meaning of the sentence when read aloud.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;em&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; mean it.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>I <em>really</em> mean it.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="b-tag">
+      <h2>&lt;b&gt; — Bring Attention To</h2>
+      <h3>Definition</h3>
+      <p>Renders text in bold purely for stylistic attention (such as keywords in a review), without implying extra importance like <code>&lt;strong&gt;</code> does.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;b&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;The &lt;b&gt;keyword&lt;/b&gt; in this sentence is bold.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The <b>keyword</b> in this sentence is bold.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="i-tag">
+      <h2>&lt;i&gt; — Idiomatic Text</h2>
+      <h3>Definition</h3>
+      <p>Renders text in italics for an alternate voice or mood — such as foreign words or ship names — without the emphasis meaning of <code>&lt;em&gt;</code>.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;i&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;The term &lt;i&gt;habeas corpus&lt;/i&gt; is Latin.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The term <i>habeas corpus</i> is Latin.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="u-tag">
+      <h2>&lt;u&gt; — Unarticulated Annotation</h2>
+      <h3>Definition</h3>
+      <p>Renders text with an underline, typically used to flag a non-textual annotation such as a proper name or a misspelling.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;u&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Please check the &lt;u&gt;underlined&lt;/u&gt; word.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Please check the <u>underlined</u> word.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="mark-tag">
+      <h2>&lt;mark&gt; — Highlighted Text</h2>
+      <h3>Definition</h3>
+      <p>Highlights a run of text for reference, such as a search match, by giving it a yellow background by default.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;mark&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks to change the highlight color via CSS.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Search results for &lt;mark&gt;HTML&lt;/mark&gt; found 12 pages.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Search results for <mark>HTML</mark> found 12 pages.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="small-tag">
+      <h2>&lt;small&gt; — Side Comment</h2>
+      <h3>Definition</h3>
+      <p>Represents side comments such as fine print, disclaimers or copyright notices, rendered in a smaller font size.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;small&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Price: $9.99 &lt;small&gt;(tax not included)&lt;/small&gt;&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Price: $9.99 <small>(tax not included)</small></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="sub-sup-tag">
+      <h2>&lt;sub&gt; / &lt;sup&gt; — Subscript and Superscript</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;sub&gt;</code> lowers text below the baseline (e.g. chemical formulas); <code>&lt;sup&gt;</code> raises it above the baseline (e.g. footnote markers or exponents).</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;sub&gt; and &lt;sup&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O and E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>H<sub>2</sub>O and E=mc<sup>2</sup></p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="blockquote-tag">
+      <h2>&lt;blockquote&gt; — Block Quotation</h2>
+      <h3>Definition</h3>
+      <p>Marks a long quotation taken from another source as its own indented block.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;blockquote&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>cite</td><td>A URL pointing to the source of the quotation.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;blockquote cite="https://www.w3.org/"&gt;
+  The Web is more a social creation than a technical one.
+&lt;/blockquote&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <blockquote cite="https://www.w3.org/">
+          The Web is more a social creation than a technical one.
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="q-tag">
+      <h2>&lt;q&gt; — Inline Quotation</h2>
+      <h3>Definition</h3>
+      <p>Marks a short quotation that flows inline with surrounding text; browsers automatically add quotation marks around it.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;q&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>cite</td><td>A URL pointing to the source of the quotation.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;She said &lt;q&gt;HTML is the skeleton of the web&lt;/q&gt;.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>She said <q>HTML is the skeleton of the web</q>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="code-tag">
+      <h2>&lt;code&gt; — Inline Code</h2>
+      <h3>Definition</h3>
+      <p>Marks a short fragment of computer code, rendered in the browser's default monospace font.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;code&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Use &lt;code&gt;console.log()&lt;/code&gt; to debug.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Use <code>console.log()</code> to debug.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="pre-tag">
+      <h2>&lt;pre&gt; — Preformatted Text</h2>
+      <h3>Definition</h3>
+      <p>Preserves whitespace and line breaks exactly as written in the source; commonly paired with <code>&lt;code&gt;</code> to display multi-line code blocks.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;pre&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;pre&gt;
+function greet() {
+  return "Hello";
+}
+&lt;/pre&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <pre>function greet() {
+  return "Hello";
+}</pre>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="abbr-tag">
+      <h2>&lt;abbr&gt; — Abbreviation</h2>
+      <h3>Definition</h3>
+      <p>Marks an abbreviation or acronym; the <code>title</code> attribute supplies the full expansion, usually shown as a tooltip on hover.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;abbr&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>title</td><td>Holds the full, expanded form of the abbreviation.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; powers the web.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p><abbr title="HyperText Markup Language">HTML</abbr> powers the web.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

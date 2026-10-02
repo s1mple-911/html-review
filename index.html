@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Site header: shared on every page of this lab project -->
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>HTML Review Website — Lab Work 3</h1>
+
+    <div class="page-intro">
+      <p>
+        This nine-page site is a practical review of HTML5: every page is
+        dedicated to one group of tags, and every tag is documented with a
+        short definition, an attribute table, a code example and a live
+        rendered result. The project is meant to be opened with a local
+        server (for example Live Server in VS Code) so that relative links,
+        images, audio and video all resolve correctly.
+      </p>
+    </div>
+
+    <section>
+      <h2>Site Map</h2>
+      <p>Use the links below (or the navigation bar above) to jump to any of the nine review pages:</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>1. Home</h3>
+          <p>Page structure basics: <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> and headings.</p>
+          <a href="index.html">You are here</a>
+        </div>
+        <div class="card">
+          <h3>2. Text</h3>
+          <p>Text formatting tags such as <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> and <code>&lt;blockquote&gt;</code>.</p>
+          <a href="text.html">Open text.html</a>
+        </div>
+        <div class="card">
+          <h3>3. Links &amp; Media</h3>
+          <p>Hyperlinks plus <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>.</p>
+          <a href="links.html">Open links.html</a>
+        </div>
+        <div class="card">
+          <h3>4. Lists</h3>
+          <p>Ordered, unordered and description lists, including nesting.</p>
+          <a href="lists.html">Open lists.html</a>
+        </div>
+        <div class="card">
+          <h3>5. Tables</h3>
+          <p>Full table structure: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>.</p>
+          <a href="tables.html">Open tables.html</a>
+        </div>
+        <div class="card">
+          <h3>6. Forms</h3>
+          <p>Inputs, labels, fieldsets and the many <code>input</code> types.</p>
+          <a href="forms.html">Open forms.html</a>
+        </div>
+        <div class="card">
+          <h3>7. Multimedia</h3>
+          <p><code>&lt;figure&gt;</code>, <code>&lt;picture&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;svg&gt;</code> and more.</p>
+          <a href="media.html">Open media.html</a>
+        </div>
+        <div class="card">
+          <h3>8. Semantic &amp; Layout</h3>
+          <p>Page regions (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>…) and a Flexbox layout.</p>
+          <a href="semantic.html">Open semantic.html</a>
+        </div>
+        <div class="card">
+          <h3>9. Metadata</h3>
+          <p><code>&lt;meta&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;base&gt;</code> and Open Graph tags.</p>
+          <a href="metadata.html">Open metadata.html</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#doctype">&lt;!DOCTYPE&gt;</a></li>
+        <li><a href="#html-tag">&lt;html&gt;</a></li>
+        <li><a href="#head-tag">&lt;head&gt;</a></li>
+        <li><a href="#body-tag">&lt;body&gt;</a></li>
+        <li><a href="#title-tag">&lt;title&gt;</a></li>
+        <li><a href="#headings">&lt;h1&gt;–&lt;h6&gt;</a></li>
+        <li><a href="#p-tag">&lt;p&gt;</a></li>
+        <li><a href="#div-tag">&lt;div&gt;</a></li>
+        <li><a href="#span-tag">&lt;span&gt;</a></li>
+        <li><a href="#comment-tag">HTML comments</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="doctype">
+      <h2>&lt;!DOCTYPE html&gt; — Document Type Declaration</h2>
+      <h3>Definition</h3>
+      <p>The DOCTYPE declaration is not an HTML tag but an instruction that tells the browser which version of HTML the page uses. <code>&lt;!DOCTYPE html&gt;</code> declares HTML5 and must be the very first line of the document.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;!DOCTYPE&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>none (keyword "html")</td><td>Signals HTML5; no further attributes are needed in modern HTML.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The declaration itself renders nothing visible — it only switches the browser into standards mode, which is why this whole page displays correctly.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="html-tag">
+      <h2>&lt;html&gt; — Root Element</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;html&gt;</code> element is the root container for the entire document; every other element is nested inside it.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;html&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>lang</td><td>Declares the language of the document (e.g. "en") for accessibility and search engines.</td></tr>
+          <tr><td>dir</td><td>Sets text direction, "ltr" (left-to-right) or "rtl" (right-to-left).</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;html lang="en"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This whole web page is the rendered result of one <code>&lt;html&gt;</code> element with <code>lang="en"</code>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="head-tag">
+      <h2>&lt;head&gt; — Document Metadata Container</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;head&gt;</code> element holds information about the page — title, character set, stylesheets, icons — that is not displayed directly in the page body.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;head&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>(none commonly used)</td><td><code>&lt;head&gt;</code> is a pure container; it takes no attributes in normal use.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;HTML Review — Home&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Nothing is drawn on screen directly, but the browser tab title and this page's styling both come from this page's <code>&lt;head&gt;</code>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="body-tag">
+      <h2>&lt;body&gt; — Visible Content Container</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;body&gt;</code> element contains everything the visitor actually sees and interacts with: text, images, forms, and so on.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;body&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>class / id</td><td>Hooks used by CSS or JavaScript to style or select the whole page body.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This entire visible page — header, navigation, main content and footer — is the content of one <code>&lt;body&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="title-tag">
+      <h2>&lt;title&gt; — Browser Tab Title</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;title&gt;</code> element defines the text shown in the browser tab/window and used as the default name when the page is bookmarked.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;title&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>(none)</td><td><code>&lt;title&gt;</code> only ever contains plain text; it accepts no attributes.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;title&gt;HTML Review — Home&lt;/title&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Look at the browser tab for this page — it reads "HTML Review — Home", which is exactly this element's text.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="headings">
+      <h2>&lt;h1&gt;–&lt;h6&gt; — Headings</h2>
+      <h3>Definition</h3>
+      <p>Headings create a hierarchical outline of the page. <code>&lt;h1&gt;</code> is the most important (usually one per page) down to <code>&lt;h6&gt;</code>, the least important.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;h1&gt;–&lt;h6&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>id</td><td>Gives the heading a unique anchor, usable for in-page navigation like this page's table of contents.</td></tr>
+          <tr><td>class</td><td>Allows CSS to style a particular group of headings differently.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;h1&gt;Level 1&lt;/h1&gt;
+&lt;h2&gt;Level 2&lt;/h2&gt;
+&lt;h3&gt;Level 3&lt;/h3&gt;
+&lt;h4&gt;Level 4&lt;/h4&gt;
+&lt;h5&gt;Level 5&lt;/h5&gt;
+&lt;h6&gt;Level 6&lt;/h6&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <h1>Level 1</h1>
+        <h2>Level 2</h2>
+        <h3>Level 3</h3>
+        <h4>Level 4</h4>
+        <h5>Level 5</h5>
+        <h6>Level 6</h6>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="p-tag">
+      <h2>&lt;p&gt; — Paragraph</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;p&gt;</code> element represents a block of running text — a paragraph. Browsers add space before and after it by default.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;p&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>class / id</td><td>Used to style or target a specific paragraph with CSS.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This is a paragraph of text.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="div-tag">
+      <h2>&lt;div&gt; — Generic Block Container</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;div&gt;</code> element is a block-level container with no inherent meaning; it exists purely to group content for styling or layout.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;div&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>class</td><td>The most common hook; lets CSS style every div sharing that class.</td></tr>
+          <tr><td>id</td><td>Targets one unique div, e.g. for a page section.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;div class="card"&gt;
+  &lt;p&gt;Content inside a div.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <div class="card">
+          <p>Content inside a div.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="span-tag">
+      <h2>&lt;span&gt; — Generic Inline Container</h2>
+      <h3>Definition</h3>
+      <p>The <code>&lt;span&gt;</code> element is the inline counterpart of <code>&lt;div&gt;</code>: it groups a piece of text or inline content without starting a new line.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;span&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>class / id</td><td>Styles or selects just the wrapped inline text, without breaking the line.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;This word is &lt;span class="brand"&gt;highlighted&lt;/span&gt; inline.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>This word is <span class="brand">highlighted</span> inline.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="comment-tag">
+      <h2>HTML Comments — &lt;!-- --&gt;</h2>
+      <h3>Definition</h3>
+      <p>Anything written between <code>&lt;!--</code> and <code>--&gt;</code> is a comment: it is ignored by the browser and never shown to visitors, but remains visible in the page source for developers.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of HTML comments</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>(none)</td><td>Comments are not elements and cannot carry attributes.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;!-- This note explains the next block to other developers --&gt;
+&lt;p&gt;Visible text.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Visible text. (The comment itself produced no output — view this page's source to find it right above the header.)</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site footer: shared on every page -->
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>

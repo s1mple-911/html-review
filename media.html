@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Multimedia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html" class="active">Multimedia</a></li>
+          <li><a href="semantic.html">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Multimedia</h1>
+    <div class="page-intro">
+      <p>
+        Beyond plain images, HTML offers richer multimedia tags: captioned
+        figures, responsive art direction with <code>&lt;picture&gt;</code>,
+        embedded pages with <code>&lt;iframe&gt;</code>, scriptable drawing
+        with <code>&lt;canvas&gt;</code>, inline vector graphics with
+        <code>&lt;svg&gt;</code>, and the generic embedding tags
+        <code>&lt;embed&gt;</code> / <code>&lt;object&gt;</code>.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#figure-tag">&lt;figure&gt; / &lt;figcaption&gt;</a></li>
+        <li><a href="#picture-tag">&lt;picture&gt; / &lt;source&gt;</a></li>
+        <li><a href="#iframe-tag">&lt;iframe&gt;</a></li>
+        <li><a href="#canvas-tag">&lt;canvas&gt;</a></li>
+        <li><a href="#svg-tag">&lt;svg&gt;</a></li>
+        <li><a href="#embed-tag">&lt;embed&gt; / &lt;object&gt;</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="figure-tag">
+      <h2>&lt;figure&gt; / &lt;figcaption&gt; — Captioned Figure</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;figure&gt;</code> groups self-contained content (an image, chart or code sample) together with its <code>&lt;figcaption&gt;</code>, which labels it.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;figure&gt; and &lt;figcaption&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>class / id</td><td>Optional hooks for custom styling; neither element has unique attributes.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;figure&gt;
+  &lt;img src="images/sample.png" alt="Generated sample gradient card"&gt;
+  &lt;figcaption&gt;Figure 1 — A sample image generated with Python/Pillow.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <figure>
+          <img src="images/sample.png" alt="Generated sample gradient card" width="320" height="180">
+          <figcaption>Figure 1 — A sample image generated with Python/Pillow.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="picture-tag">
+      <h2>&lt;picture&gt; / &lt;source&gt; — Responsive Image</h2>
+      <h3>Definition</h3>
+      <p><code>&lt;picture&gt;</code> lets the browser pick among several <code>&lt;source&gt;</code> candidates (by format or screen width) before falling back to a plain <code>&lt;img&gt;</code>.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;picture&gt; and &lt;source&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>srcset</td><td>On &lt;source&gt;, one or more candidate image files.</td></tr>
+          <tr><td>media</td><td>A CSS media condition under which that source should be used.</td></tr>
+          <tr><td>type</td><td>The MIME type of the candidate file, e.g. "image/svg+xml".</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;picture&gt;
+  &lt;source srcset="images/logo.svg" type="image/svg+xml"&gt;
+  &lt;img src="images/sample.png" alt="Sample card with vector fallback" width="200"&gt;
+&lt;/picture&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <picture>
+          <source srcset="images/logo.svg" type="image/svg+xml">
+          <img src="images/sample.png" alt="Sample card with vector fallback" width="200">
+        </picture>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="iframe-tag">
+      <h2>&lt;iframe&gt; — Embedded Page</h2>
+      <h3>Definition</h3>
+      <p>Embeds another HTML document inside the current page, in its own nested browsing context.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;iframe&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>src</td><td>The page or URL to embed.</td></tr>
+          <tr><td>title</td><td>An accessible name describing the embedded content.</td></tr>
+          <tr><td>width / height</td><td>Sets the embedded frame's visible size.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;iframe src="index.html" title="Embedded preview of the Home page"
+        width="100%" height="220"&gt;&lt;/iframe&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <iframe src="index.html" title="Embedded preview of the Home page" width="100%" height="220"></iframe>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="canvas-tag">
+      <h2>&lt;canvas&gt; — Scriptable Drawing Surface</h2>
+      <h3>Definition</h3>
+      <p>Provides a blank bitmap surface that JavaScript can draw on directly — shapes, text, charts or games. By itself it is an empty rectangle.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;canvas&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>width / height</td><td>The drawing surface's pixel dimensions.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;canvas id="demo-canvas" width="200" height="120"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const ctx = document.getElementById("demo-canvas").getContext("2d");
+  ctx.fillStyle = "#2b6cb0";
+  ctx.fillRect(10, 10, 80, 60);
+  ctx.beginPath();
+  ctx.arc(150, 60, 40, 0, Math.PI * 2);
+  ctx.strokeStyle = "#ed8936";
+  ctx.lineWidth = 4;
+  ctx.stroke();
+&lt;/script&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <canvas id="demo-canvas" width="200" height="120"></canvas>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="svg-tag">
+      <h2>&lt;svg&gt; — Inline Vector Graphics</h2>
+      <h3>Definition</h3>
+      <p>Embeds Scalable Vector Graphics directly in the HTML markup, describing shapes with resolution-independent, declarative tags.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;svg&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>viewBox</td><td>Defines the coordinate system used by the shapes inside.</td></tr>
+          <tr><td>width / height</td><td>The rendered size of the graphic on the page.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;svg viewBox="0 0 100 100" width="100" height="100"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="#2b6cb0"&gt;&lt;/circle&gt;
+  &lt;rect x="30" y="30" width="40" height="40" fill="#ed8936"&gt;&lt;/rect&gt;
+&lt;/svg&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <circle cx="50" cy="50" r="40" fill="#2b6cb0"></circle>
+          <rect x="30" y="30" width="40" height="40" fill="#ed8936"></rect>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="embed-tag">
+      <h2>&lt;embed&gt; / &lt;object&gt; — Generic External Content</h2>
+      <h3>Definition</h3>
+      <p>Both tags embed external resources handled by a plugin or the browser itself; <code>&lt;object&gt;</code> additionally supports fallback content between its tags.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;embed&gt; and &lt;object&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>src (embed) / data (object)</td><td>The resource to embed.</td></tr>
+          <tr><td>type</td><td>The resource's MIME type.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;embed src="images/sample.png" type="image/png" width="160"&gt;
+&lt;object data="images/sample.png" type="image/png" width="160"&gt;
+  Image could not be displayed.
+&lt;/object&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <embed src="images/sample.png" type="image/png" width="160">
+        <object data="images/sample.png" type="image/png" width="160">
+          Image could not be displayed.
+        </object>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+
+  <!-- Inline script used only for the <canvas> example above, as permitted by the assignment brief -->
+  <script>
+    const ctx = document.getElementById("demo-canvas").getContext("2d");
+    ctx.fillStyle = "#2b6cb0";
+    ctx.fillRect(10, 10, 80, 60);
+    ctx.beginPath();
+    ctx.arc(150, 60, 40, 0, Math.PI * 2);
+    ctx.strokeStyle = "#ed8936";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  </script>
+</body>
+</html>

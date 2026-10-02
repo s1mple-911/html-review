@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Review — Semantic &amp; Layout</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <span>HTML Review</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="text.html">Text</a></li>
+          <li><a href="links.html">Links &amp; Media</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tables.html">Tables</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="media.html">Multimedia</a></li>
+          <li><a href="semantic.html" class="active">Semantic</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Semantic &amp; Layout</h1>
+    <div class="page-intro">
+      <p>
+        Semantic tags describe the <em>role</em> of a page region instead of
+        just its appearance. This page reviews the landmark elements
+        (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+        <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>,
+        <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>,
+        <code>&lt;footer&gt;</code>), small interactive/semantic tags
+        (<code>&lt;details&gt;</code>, <code>&lt;time&gt;</code>,
+        <code>&lt;address&gt;</code>), and finishes with a Flexbox layout
+        built from them.
+      </p>
+    </div>
+
+    <div class="toc">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#header-tag">&lt;header&gt;</a></li>
+        <li><a href="#nav-tag">&lt;nav&gt;</a></li>
+        <li><a href="#main-tag">&lt;main&gt;</a></li>
+        <li><a href="#section-tag">&lt;section&gt;</a></li>
+        <li><a href="#article-tag">&lt;article&gt;</a></li>
+        <li><a href="#aside-tag">&lt;aside&gt;</a></li>
+        <li><a href="#footer-tag">&lt;footer&gt;</a></li>
+        <li><a href="#details-tag">&lt;details&gt; / &lt;summary&gt;</a></li>
+        <li><a href="#time-tag">&lt;time&gt;</a></li>
+        <li><a href="#address-tag">&lt;address&gt;</a></li>
+        <li><a href="#flex-layout">Flexbox Layout Example</a></li>
+      </ol>
+    </div>
+
+    <section class="tag-demo" id="header-tag">
+      <h2>&lt;header&gt; — Introductory Region</h2>
+      <h3>Definition</h3>
+      <p>Marks introductory content for a page or a section — typically a logo, site title and primary navigation, as used at the very top of this page.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;header&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Used here as <code>id="site-header"</code> to style the shared banner.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;header id="site-header"&gt;
+  &lt;div class="brand"&gt;HTML Review&lt;/div&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The blue banner at the top of this page is the rendered <code>&lt;header&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="nav-tag">
+      <h2>&lt;nav&gt; — Navigation Block</h2>
+      <h3>Definition</h3>
+      <p>Marks a block of primary navigation links, helping assistive technology and search engines identify the site's main menu.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;nav&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>aria-label</td><td>Gives the navigation region an accessible name, useful when a page has more than one &lt;nav&gt;.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;nav aria-label="Main navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The menu bar inside this page's header — Home, Text, Links &amp; Media, etc. — is the rendered <code>&lt;nav&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="main-tag">
+      <h2>&lt;main&gt; — Primary Content</h2>
+      <h3>Definition</h3>
+      <p>Wraps the content unique to the current page, excluding repeated elements like the header, navigation or footer. There should be only one per page.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;main&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Optional hooks for custom styling, e.g. max-width centering.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;main&gt;
+  &lt;h1&gt;Semantic &amp; Layout&lt;/h1&gt;
+  ...
+&lt;/main&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Everything between this page's header and footer — including this very sentence — lives inside the page's single <code>&lt;main&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="section-tag">
+      <h2>&lt;section&gt; — Thematic Grouping</h2>
+      <h3>Definition</h3>
+      <p>Groups related content under a common theme, usually introduced by its own heading — every gray card on this page is itself a <code>&lt;section class="tag-demo"&gt;</code>.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;section&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Used throughout this site as <code>class="tag-demo"</code> for consistent styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;section&gt;
+  &lt;h2&gt;Latest Announcements&lt;/h2&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <section>
+          <h4>Latest Announcements</h4>
+          <p>Lab Work 3 has been published to all students.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="article-tag">
+      <h2>&lt;article&gt; — Self-contained Content</h2>
+      <h3>Definition</h3>
+      <p>Represents content that could stand alone and be redistributed independently — a blog post, a news story, or a forum comment.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;article&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;article&gt;
+  &lt;h3&gt;Why Semantic HTML Matters&lt;/h3&gt;
+  &lt;p&gt;Semantic tags improve accessibility and SEO.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <article>
+          <h4>Why Semantic HTML Matters</h4>
+          <p>Semantic tags improve accessibility and SEO.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="aside-tag">
+      <h2>&lt;aside&gt; — Tangentially Related Content</h2>
+      <h3>Definition</h3>
+      <p>Marks content loosely related to the surrounding text, such as a sidebar, a pull quote, or related links.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;aside&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Optional hooks for custom styling.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;aside&gt;
+  &lt;h4&gt;Tip&lt;/h4&gt;
+  &lt;p&gt;Use Live Server to preview this site locally.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <aside>
+          <h4>Tip</h4>
+          <p>Use Live Server to preview this site locally.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="footer-tag">
+      <h2>&lt;footer&gt; — Closing Region</h2>
+      <h3>Definition</h3>
+      <p>Marks the closing content of a page or section — typically authorship, copyright and related links, as used at the bottom of this page.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;footer&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>id / class</td><td>Used here as <code>id="site-footer"</code> to style the shared footer.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;footer id="site-footer"&gt;
+  &lt;p&gt;Authors: ... &amp;copy; 2026&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>The dark bar at the very bottom of this page is the rendered <code>&lt;footer&gt;</code> element.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="details-tag">
+      <h2>&lt;details&gt; / &lt;summary&gt; — Disclosure Widget</h2>
+      <h3>Definition</h3>
+      <p>Creates a native collapsible widget: <code>&lt;summary&gt;</code> is the always-visible label, and the rest of the content toggles open/closed on click — no JavaScript required.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;details&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>open</td><td>Renders the widget already expanded on page load.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;details&gt;
+  &lt;summary&gt;What is Live Server?&lt;/summary&gt;
+  &lt;p&gt;A VS Code extension that serves static files with live reload.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <details>
+          <summary>What is Live Server?</summary>
+          <p>A VS Code extension that serves static files with live reload.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="time-tag">
+      <h2>&lt;time&gt; — Machine-readable Date/Time</h2>
+      <h3>Definition</h3>
+      <p>Marks a human-readable date or time while attaching a machine-readable value via the <code>datetime</code> attribute.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;time&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>datetime</td><td>The ISO 8601 value a script or browser can parse, independent of the displayed text.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;p&gt;Published on &lt;time datetime="2026-10-02"&gt;October 2, 2026&lt;/time&gt;.&lt;/p&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <p>Published on <time datetime="2026-10-02">October 2, 2026</time>.</p>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="address-tag">
+      <h2>&lt;address&gt; — Contact Information</h2>
+      <h3>Definition</h3>
+      <p>Marks the contact information for the author or owner of the document or an enclosing <code>&lt;article&gt;</code>; browsers typically italicize it.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Attributes of &lt;address&gt;</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody><tr><td>(none)</td><td>&lt;address&gt; carries no unique attributes; it is a semantic grouping only.</td></tr></tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;address&gt;
+  Written by Asilbek Ermatov.&lt;br&gt;
+  Contact: &lt;a href="mailto:example@mail.com"&gt;example@mail.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <address>
+          Written by Asilbek Ermatov.<br>
+          Contact: <a href="mailto:example@mail.com">example@mail.com</a>
+        </address>
+      </div>
+    </section>
+
+    <section class="tag-demo" id="flex-layout">
+      <h2>Flexbox Layout Example</h2>
+      <h3>Definition</h3>
+      <p>Combines <code>&lt;aside&gt;</code> and <code>&lt;article&gt;</code> inside a flex container (<code>display: flex</code> in style.css) to build a classic two-column page layout that reflows on small screens.</p>
+      <h3>Attributes</h3>
+      <table class="attr-table">
+        <caption>Relevant CSS, not HTML attributes</caption>
+        <thead><tr><th>Attribute</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>display: flex</td><td>Turns the wrapper into a flex container (defined on <code>.layout-demo</code> in style.css).</td></tr>
+          <tr><td>flex: 1 1 200px / 3 1 420px</td><td>Gives the sidebar and the article different growth ratios and minimum widths.</td></tr>
+        </tbody>
+      </table>
+      <h3>Example (code)</h3>
+      <pre><code>&lt;div class="layout-demo"&gt;
+  &lt;aside&gt;Sidebar content&lt;/aside&gt;
+  &lt;article&gt;Main article content&lt;/article&gt;
+&lt;/div&gt;</code></pre>
+      <h3>Example (result)</h3>
+      <div class="result-box">
+        <div class="layout-demo">
+          <aside>
+            <h4>Related Pages</h4>
+            <ul>
+              <li><a href="text.html">Text Formatting</a></li>
+              <li><a href="tables.html">Tables</a></li>
+            </ul>
+          </aside>
+          <article>
+            <h4>Flexbox in Three Lines</h4>
+            <p>Set <code>display: flex</code> on the parent, then control each child with the <code>flex</code> shorthand (grow, shrink, basis). Resize the browser window to see this layout stack vertically below 640px.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>Authors: Asilbek Ermatov &amp; Partner: ___ — &copy; 2026</p>
+    <p>Source code: <a href="https://github.com/s1mple-911/html-review">GitHub repository</a></p>
+  </footer>
+</body>
+</html>
