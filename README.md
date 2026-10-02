@@ -39,10 +39,13 @@ html-review/
 ├── css/
 │   └── style.css        # single shared stylesheet for every page
 ├── images/
-│   ├── logo.svg          # site logo (vector)
-│   ├── sample.png        # sample raster image (generated with Python/Pillow)
-│   ├── tone.wav           # 2-second sample tone (generated with Python's wave module)
-│   └── README.txt        # notes on the video asset (see below)
+│   ├── logo.svg                        # site logo (vector)
+│   ├── icon-*.svg                      # 9 two-color icon cards for the home page
+│   ├── hero.jpg                        # hero banner (generated with Python/Pillow)
+│   ├── sample.jpg / sample-small.jpg / sample-large.jpg  # sample photos (Pillow)
+│   ├── intro.mp4 / intro.webm / poster.jpg  # animated demo clip (generated with ffmpeg)
+│   ├── tone.mp3 / tone.wav             # 2.5s chord tone (generated with ffmpeg)
+│   └── README.txt                      # full asset list + regeneration commands
 └── README.md
 ```
 
@@ -65,6 +68,7 @@ mostly work too, but some browsers restrict `<iframe>`/`<video>` behavior on
 
 - All styling lives in `css/style.css` — no `style="..."` attributes or
   `<style>` tags are used anywhere in the HTML.
-- `images/sample.mp4` was not generated because `ffmpeg` was not available
-  on the build machine; see `images/README.txt` for details and how the
-  `<video>` examples fall back to a public sample clip instead.
+- Every image, video and audio file used on the site is a real local asset
+  under `images/` (generated with Python/Pillow and ffmpeg) — nothing
+  points at an external URL. See `images/README.txt` for the full list and
+  the commands used to generate each one.

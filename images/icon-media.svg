@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Multimedia icon">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#2b6cb0"/>
+  <rect x="12" y="14" width="40" height="30" rx="3" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="22" cy="24" r="3.4" fill="#ffffff"/>
+  <polyline points="14,41 24,30 31,36 40,26 50,40" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <circle cx="32" cy="46" r="9" fill="#ed8936"/>
+  <polygon points="29,42 29,50 37,46" fill="#ffffff"/>
+</svg>

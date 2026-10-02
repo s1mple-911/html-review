@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Home / document structure icon">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#2b6cb0"/>
+  <rect x="16" y="14" width="26" height="34" rx="2" fill="#ffffff"/>
+  <rect x="22" y="22" width="14" height="3" fill="#2b6cb0"/>
+  <rect x="22" y="29" width="14" height="3" fill="#2b6cb0"/>
+  <rect x="22" y="36" width="9" height="3" fill="#ed8936"/>
+  <circle cx="46" cy="18" r="6" fill="#ed8936"/>
+</svg>

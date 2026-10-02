@@ -32,7 +32,20 @@
   </header>
 
   <main>
-    <h1>HTML Review Website — Lab Work 3</h1>
+    <section class="hero">
+      <span class="hero-eyebrow">Lab Work 3 &middot; HTML5 Review</span>
+      <h1>HTML Review Website</h1>
+      <p>
+        A practical, page-by-page review of HTML5: every page below is
+        dedicated to one group of tags, and every tag is documented with a
+        short definition, an attribute table, a code example and a live
+        rendered result.
+      </p>
+      <div class="hero-actions">
+        <a href="#site-map" class="btn btn-primary">Browse the 9 pages</a>
+        <a href="#how-presented" class="btn btn-ghost">How each tag is presented</a>
+      </div>
+    </section>
 
     <div class="page-intro">
       <p>
@@ -45,54 +58,90 @@
       </p>
     </div>
 
-    <section>
-      <h2>Site Map</h2>
-      <p>Use the links below (or the navigation bar above) to jump to any of the nine review pages:</p>
+    <section id="site-map">
+      <h2>What You Will Find</h2>
+      <p>Use the cards below (or the navigation bar above) to jump to any of the nine review pages:</p>
       <div class="card-grid">
         <div class="card">
+          <img class="card-icon" src="images/icon-home.svg" alt="" width="44" height="44">
           <h3>1. Home</h3>
           <p>Page structure basics: <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> and headings.</p>
-          <a href="index.html">You are here</a>
+          <a href="index.html" class="current-page">You are here</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-text.svg" alt="" width="44" height="44">
           <h3>2. Text</h3>
           <p>Text formatting tags such as <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> and <code>&lt;blockquote&gt;</code>.</p>
           <a href="text.html">Open text.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-links.svg" alt="" width="44" height="44">
           <h3>3. Links &amp; Media</h3>
           <p>Hyperlinks plus <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>.</p>
           <a href="links.html">Open links.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-lists.svg" alt="" width="44" height="44">
           <h3>4. Lists</h3>
           <p>Ordered, unordered and description lists, including nesting.</p>
           <a href="lists.html">Open lists.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-tables.svg" alt="" width="44" height="44">
           <h3>5. Tables</h3>
           <p>Full table structure: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>.</p>
           <a href="tables.html">Open tables.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-forms.svg" alt="" width="44" height="44">
           <h3>6. Forms</h3>
           <p>Inputs, labels, fieldsets and the many <code>input</code> types.</p>
           <a href="forms.html">Open forms.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-media.svg" alt="" width="44" height="44">
           <h3>7. Multimedia</h3>
           <p><code>&lt;figure&gt;</code>, <code>&lt;picture&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;svg&gt;</code> and more.</p>
           <a href="media.html">Open media.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-semantic.svg" alt="" width="44" height="44">
           <h3>8. Semantic &amp; Layout</h3>
           <p>Page regions (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>…) and a Flexbox layout.</p>
           <a href="semantic.html">Open semantic.html</a>
         </div>
         <div class="card">
+          <img class="card-icon" src="images/icon-metadata.svg" alt="" width="44" height="44">
           <h3>9. Metadata</h3>
           <p><code>&lt;meta&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;base&gt;</code> and Open Graph tags.</p>
           <a href="metadata.html">Open metadata.html</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-presented">
+      <h2>How Each Tag Is Presented</h2>
+      <p>Every tag section on every page — including the ones below — follows the same four-part recipe:</p>
+      <div class="legend-strip">
+        <div class="legend-item">
+          <span class="legend-num">1</span>
+          <h3>Definition</h3>
+          <p>A short, plain-language explanation of what the tag is for.</p>
+        </div>
+        <div class="legend-item">
+          <span class="legend-num">2</span>
+          <h3>Attributes</h3>
+          <p>A table listing each relevant attribute and the role it plays.</p>
+        </div>
+        <div class="legend-item">
+          <span class="legend-num">3</span>
+          <h3>Example (code)</h3>
+          <p>The raw, escaped markup shown in a dark code block.</p>
+        </div>
+        <div class="legend-item">
+          <span class="legend-num">4</span>
+          <h3>Example (result)</h3>
+          <p>That exact markup rendered live, inside a labeled "Result" box.</p>
         </div>
       </div>
     </section>

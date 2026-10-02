@@ -74,12 +74,12 @@
 &lt;a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"&gt;
   W3C website (new tab)
 &lt;/a&gt;
-&lt;a href="images/sample.png" download&gt;Download sample.png&lt;/a&gt;</code></pre>
+&lt;a href="images/sample.jpg" download&gt;Download sample.jpg&lt;/a&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
         <p><a href="index.html">Back to Home</a></p>
         <p><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C website (new tab)</a></p>
-        <p><a href="images/sample.png" download>Download sample.png</a></p>
+        <p><a href="images/sample.jpg" download>Download sample.jpg</a></p>
       </div>
     </section>
 
@@ -99,11 +99,11 @@
         </tbody>
       </table>
       <h3>Example (code)</h3>
-      <pre><code>&lt;img src="images/sample.png" alt="Generated sample gradient card"
+      <pre><code>&lt;img src="images/sample.jpg" alt="Generated sample gradient card"
      width="320" height="180" loading="lazy"&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
-        <img src="images/sample.png" alt="Generated sample gradient card" width="320" height="180" loading="lazy">
+        <img src="images/sample.jpg" alt="Generated sample gradient card" width="320" height="180" loading="lazy">
       </div>
     </section>
 
@@ -124,17 +124,19 @@
         </tbody>
       </table>
       <h3>Example (code)</h3>
-      <pre><code>&lt;video controls muted loop poster="images/sample.png" width="320"&gt;
-  &lt;source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"&gt;
+      <pre><code>&lt;video controls muted loop poster="images/poster.jpg" width="320"&gt;
+  &lt;source src="images/intro.webm" type="video/webm"&gt;
+  &lt;source src="images/intro.mp4" type="video/mp4"&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
-        <video controls muted loop poster="images/sample.png" width="320">
-          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        <video controls muted loop poster="images/poster.jpg" width="320">
+          <source src="images/intro.webm" type="video/webm">
+          <source src="images/intro.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><small>No local ffmpeg was available to render images/sample.mp4 — see images/README.txt for details and how to switch to a fully local file.</small></p>
+        <p><small>A 7-second animated clip rendered locally with ffmpeg (gradient + rotating shapes + text overlay); see <a href="#source-tag">&lt;source&gt;</a> below for how the browser picks between the WebM and MP4 files.</small></p>
       </div>
     </section>
 
@@ -152,16 +154,18 @@
       </table>
       <h3>Example (code)</h3>
       <pre><code>&lt;audio controls&gt;
+  &lt;source src="images/tone.mp3" type="audio/mpeg"&gt;
   &lt;source src="images/tone.wav" type="audio/wav"&gt;
   Your browser does not support the audio tag.
 &lt;/audio&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
         <audio controls>
+          <source src="images/tone.mp3" type="audio/mpeg">
           <source src="images/tone.wav" type="audio/wav">
           Your browser does not support the audio tag.
         </audio>
-        <p><small>2-second, 440 Hz tone generated with Python's <code>wave</code> module.</small></p>
+        <p><small>A 2.5-second C-major chord (three mixed sine waves with fade in/out), rendered locally with ffmpeg as both MP3 and WAV.</small></p>
       </div>
     </section>
 
@@ -180,6 +184,7 @@
       </table>
       <h3>Example (code)</h3>
       <pre><code>&lt;audio controls&gt;
+  &lt;source src="images/tone.mp3" type="audio/mpeg"&gt;
   &lt;source src="images/tone.wav" type="audio/wav"&gt;
 &lt;/audio&gt;</code></pre>
       <h3>Example (result)</h3>

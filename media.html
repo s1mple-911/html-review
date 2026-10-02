@@ -67,13 +67,13 @@
       </table>
       <h3>Example (code)</h3>
       <pre><code>&lt;figure&gt;
-  &lt;img src="images/sample.png" alt="Generated sample gradient card"&gt;
+  &lt;img src="images/sample.jpg" alt="Generated sample gradient card"&gt;
   &lt;figcaption&gt;Figure 1 — A sample image generated with Python/Pillow.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
         <figure>
-          <img src="images/sample.png" alt="Generated sample gradient card" width="320" height="180">
+          <img src="images/sample.jpg" alt="Generated sample gradient card" width="320" height="180">
           <figcaption>Figure 1 — A sample image generated with Python/Pillow.</figcaption>
         </figure>
       </div>
@@ -95,15 +95,18 @@
       </table>
       <h3>Example (code)</h3>
       <pre><code>&lt;picture&gt;
-  &lt;source srcset="images/logo.svg" type="image/svg+xml"&gt;
-  &lt;img src="images/sample.png" alt="Sample card with vector fallback" width="200"&gt;
+  &lt;source media="(min-width: 800px)" srcset="images/sample-large.jpg"&gt;
+  &lt;source media="(min-width: 400px)" srcset="images/sample.jpg"&gt;
+  &lt;img src="images/sample-small.jpg" alt="Sample card, responsive by viewport width" width="320"&gt;
 &lt;/picture&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
         <picture>
-          <source srcset="images/logo.svg" type="image/svg+xml">
-          <img src="images/sample.png" alt="Sample card with vector fallback" width="200">
+          <source media="(min-width: 800px)" srcset="images/sample-large.jpg">
+          <source media="(min-width: 400px)" srcset="images/sample.jpg">
+          <img src="images/sample-small.jpg" alt="Sample card, responsive by viewport width" width="320">
         </picture>
+        <p><small>Three real local files — <code>sample-small.jpg</code> (400px), <code>sample.jpg</code> (800px) and <code>sample-large.jpg</code> (1200px) — resize this panel or the whole browser window to see the source swap.</small></p>
       </div>
     </section>
 
@@ -199,14 +202,14 @@
         </tbody>
       </table>
       <h3>Example (code)</h3>
-      <pre><code>&lt;embed src="images/sample.png" type="image/png" width="160"&gt;
-&lt;object data="images/sample.png" type="image/png" width="160"&gt;
+      <pre><code>&lt;embed src="images/sample.jpg" type="image/jpeg" width="160"&gt;
+&lt;object data="images/sample.jpg" type="image/jpeg" width="160"&gt;
   Image could not be displayed.
 &lt;/object&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
-        <embed src="images/sample.png" type="image/png" width="160">
-        <object data="images/sample.png" type="image/png" width="160">
+        <embed src="images/sample.jpg" type="image/jpeg" width="160">
+        <object data="images/sample.jpg" type="image/jpeg" width="160">
           Image could not be displayed.
         </object>
       </div>
