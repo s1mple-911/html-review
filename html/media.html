@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Review — Multimedia</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/logo.svg" type="../image/svg+xml">
 </head>
 <body>
   <header id="site-header">
     <div class="header-inner">
       <div class="brand">
-        <img src="images/logo.svg" alt="HTML Review site logo" width="40" height="40">
+        <img src="../images/logo.svg" alt="HTML Review site logo" width="40" height="40">
         <span>HTML Review</span>
       </div>
       <nav class="site-nav" aria-label="Main navigation">
@@ -25,6 +25,7 @@
           <li><a href="media.html" class="active">Multimedia</a></li>
           <li><a href="semantic.html">Semantic</a></li>
           <li><a href="metadata.html">Metadata</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
         </ul>
       </nav>
     </div>
@@ -73,7 +74,7 @@
       <h3>Example (result)</h3>
       <div class="result-box">
         <figure>
-          <img src="images/sample.jpg" alt="Generated sample gradient card" width="320" height="180">
+          <img src="../images/sample.jpg" alt="Generated sample gradient card" width="320" height="180">
           <figcaption>Figure 1 — A sample image generated with Python/Pillow.</figcaption>
         </figure>
       </div>
@@ -104,7 +105,7 @@
         <picture>
           <source media="(min-width: 800px)" srcset="images/sample-large.jpg">
           <source media="(min-width: 400px)" srcset="images/sample.jpg">
-          <img src="images/sample-small.jpg" alt="Sample card, responsive by viewport width" width="320">
+          <img src="../images/sample-small.jpg" alt="Sample card, responsive by viewport width" width="320">
         </picture>
         <p><small>Three real local files — <code>sample-small.jpg</code> (400px), <code>sample.jpg</code> (800px) and <code>sample-large.jpg</code> (1200px) — resize this panel or the whole browser window to see the source swap.</small></p>
       </div>
@@ -208,8 +209,8 @@
 &lt;/object&gt;</code></pre>
       <h3>Example (result)</h3>
       <div class="result-box">
-        <embed src="images/sample.jpg" type="image/jpeg" width="160">
-        <object data="images/sample.jpg" type="image/jpeg" width="160">
+        <embed src="../images/sample.jpg" type="../image/jpeg" width="160">
+        <object data="../images/sample.jpg" type="../image/jpeg" width="160">
           Image could not be displayed.
         </object>
       </div>

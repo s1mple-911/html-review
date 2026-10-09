@@ -1,11 +1,1056 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HTML Review — Quiz</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
 </head>
+
 <body>
-    
+
+  <!-- ================= HEADER ================= -->
+
+  <header id="site-header">
+
+    <div class="header-inner">
+
+      <div class="brand">
+        <img
+          src="../images/logo.svg"
+          alt="HTML Review site logo"
+          width="40"
+          height="40"
+        >
+
+        <span>HTML Review</span>
+      </div>
+
+
+      <nav class="site-nav" aria-label="Main navigation">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="text.html">Text</a>
+          </li>
+
+          <li>
+            <a href="links.html">Links &amp; Media</a>
+          </li>
+
+          <li>
+            <a href="lists.html">Lists</a>
+          </li>
+
+          <li>
+            <a href="tables.html">Tables</a>
+          </li>
+
+          <li>
+            <a href="forms.html">Forms</a>
+          </li>
+
+          <li>
+            <a href="media.html">Multimedia</a>
+          </li>
+
+          <li>
+            <a href="semantic.html">Semantic</a>
+          </li>
+
+          <li>
+            <a href="metadata.html">Metadata</a>
+          </li>
+
+          <li>
+            <a href="quiz.html" class="active">Quiz</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <div class="quiz-container">
+
+      <h1>HTML Quiz</h1>
+
+
+      <section class="quiz-intro">
+
+        <p>
+          Test your HTML knowledge with these five interactive questions.
+          Select the correct answer for each question and check your score
+          when you are finished.
+        </p>
+
+      </section>
+
+
+      <!-- Quiz Card -->
+
+      <section class="quiz-card">
+
+        <div class="quiz-header">
+
+          <div>
+
+            <span class="quiz-label">
+              INTERACTIVE PRACTICE
+            </span>
+
+            <h2>HTML Knowledge Check</h2>
+
+          </div>
+
+
+          <div
+            class="quiz-progress-text"
+            id="progressText"
+          >
+            0 / 5 answered
+          </div>
+
+        </div>
+
+
+        <!-- Progress bar -->
+
+        <div class="progress-container">
+
+          <div
+            class="progress-bar"
+            id="progressBar"
+          ></div>
+
+        </div>
+
+
+        <form id="quizForm">
+
+
+          <!-- ================= QUESTION 1 ================= -->
+
+          <article class="quiz-question">
+
+            <div class="question-number">
+              1
+            </div>
+
+
+            <div class="question-body">
+
+              <h3>
+                Which HTML element is used for the largest heading?
+              </h3>
+
+
+              <div class="answer-options">
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q1"
+                    value="a"
+                  >
+
+                  <span class="answer-letter">
+                    A
+                  </span>
+
+                  <span>
+                    &lt;heading&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q1"
+                    value="b"
+                  >
+
+                  <span class="answer-letter">
+                    B
+                  </span>
+
+                  <span>
+                    &lt;h1&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q1"
+                    value="c"
+                  >
+
+                  <span class="answer-letter">
+                    C
+                  </span>
+
+                  <span>
+                    &lt;head&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q1"
+                    value="d"
+                  >
+
+                  <span class="answer-letter">
+                    D
+                  </span>
+
+                  <span>
+                    &lt;title&gt;
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="feedback"></div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ================= QUESTION 2 ================= -->
+
+          <article class="quiz-question">
+
+            <div class="question-number">
+              2
+            </div>
+
+
+            <div class="question-body">
+
+              <h3>
+                Which attribute specifies the destination of a link?
+              </h3>
+
+
+              <div class="answer-options">
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q2"
+                    value="a"
+                  >
+
+                  <span class="answer-letter">
+                    A
+                  </span>
+
+                  <span>
+                    src
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q2"
+                    value="b"
+                  >
+
+                  <span class="answer-letter">
+                    B
+                  </span>
+
+                  <span>
+                    href
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q2"
+                    value="c"
+                  >
+
+                  <span class="answer-letter">
+                    C
+                  </span>
+
+                  <span>
+                    link
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q2"
+                    value="d"
+                  >
+
+                  <span class="answer-letter">
+                    D
+                  </span>
+
+                  <span>
+                    url
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="feedback"></div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ================= QUESTION 3 ================= -->
+
+          <article class="quiz-question">
+
+            <div class="question-number">
+              3
+            </div>
+
+
+            <div class="question-body">
+
+              <h3>
+                Which element creates an unordered list?
+              </h3>
+
+
+              <div class="answer-options">
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q3"
+                    value="a"
+                  >
+
+                  <span class="answer-letter">
+                    A
+                  </span>
+
+                  <span>
+                    &lt;ol&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q3"
+                    value="b"
+                  >
+
+                  <span class="answer-letter">
+                    B
+                  </span>
+
+                  <span>
+                    &lt;li&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q3"
+                    value="c"
+                  >
+
+                  <span class="answer-letter">
+                    C
+                  </span>
+
+                  <span>
+                    &lt;ul&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q3"
+                    value="d"
+                  >
+
+                  <span class="answer-letter">
+                    D
+                  </span>
+
+                  <span>
+                    &lt;list&gt;
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="feedback"></div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ================= QUESTION 4 ================= -->
+
+          <article class="quiz-question">
+
+            <div class="question-number">
+              4
+            </div>
+
+
+            <div class="question-body">
+
+              <h3>
+                Which semantic element represents the main content of a page?
+              </h3>
+
+
+              <div class="answer-options">
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q4"
+                    value="a"
+                  >
+
+                  <span class="answer-letter">
+                    A
+                  </span>
+
+                  <span>
+                    &lt;main&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q4"
+                    value="b"
+                  >
+
+                  <span class="answer-letter">
+                    B
+                  </span>
+
+                  <span>
+                    &lt;body&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q4"
+                    value="c"
+                  >
+
+                  <span class="answer-letter">
+                    C
+                  </span>
+
+                  <span>
+                    &lt;content&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q4"
+                    value="d"
+                  >
+
+                  <span class="answer-letter">
+                    D
+                  </span>
+
+                  <span>
+                    &lt;section&gt;
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="feedback"></div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ================= QUESTION 5 ================= -->
+
+          <article class="quiz-question">
+
+            <div class="question-number">
+              5
+            </div>
+
+
+            <div class="question-body">
+
+              <h3>
+                Which HTML element is used to insert an image?
+              </h3>
+
+
+              <div class="answer-options">
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q5"
+                    value="a"
+                  >
+
+                  <span class="answer-letter">
+                    A
+                  </span>
+
+                  <span>
+                    &lt;picture&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q5"
+                    value="b"
+                  >
+
+                  <span class="answer-letter">
+                    B
+                  </span>
+
+                  <span>
+                    &lt;image&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q5"
+                    value="c"
+                  >
+
+                  <span class="answer-letter">
+                    C
+                  </span>
+
+                  <span>
+                    &lt;img&gt;
+                  </span>
+
+                </label>
+
+
+                <label class="answer-option">
+
+                  <input
+                    type="radio"
+                    name="q5"
+                    value="d"
+                  >
+
+                  <span class="answer-letter">
+                    D
+                  </span>
+
+                  <span>
+                    &lt;src&gt;
+                  </span>
+
+                </label>
+
+              </div>
+
+
+              <div class="feedback"></div>
+
+            </div>
+
+          </article>
+
+
+          <!-- ================= BUTTONS ================= -->
+
+          <div class="quiz-buttons">
+
+            <button
+              type="button"
+              id="resetBtn"
+              class="reset-button"
+            >
+              Reset Quiz
+            </button>
+
+
+            <button
+              type="button"
+              id="checkBtn"
+              class="check-button"
+            >
+              Check Answers
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <div
+          class="result-box"
+          id="resultBox"
+        >
+
+          <div class="result-icon">
+            ✓
+          </div>
+
+
+          <div>
+
+            <span class="quiz-label">
+              YOUR RESULT
+            </span>
+
+            <h2 id="scoreText">
+              0 / 5
+            </h2>
+
+            <p id="resultMessage">
+              Complete the quiz to see your result.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer id="site-footer">
+
+    <p>
+      Authors:
+      Asilbek Ermatov
+      &amp;
+      Partner:
+      Ibrohim Xudoyberdiyev
+      —
+      &copy; 2026
+    </p>
+
+    <p>
+      Source code:
+      <a
+        href="https://github.com/s1mple-911/html-review"
+      >
+        GitHub repository
+      </a>
+    </p>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    const correctAnswers = {
+      q1: "b",
+      q2: "b",
+      q3: "c",
+      q4: "a",
+      q5: "c"
+    };
+
+
+    const explanations = {
+
+      q1:
+        "Correct! <h1> is the largest HTML heading.",
+
+      q2:
+        "Correct! The href attribute specifies the destination of a link.",
+
+      q3:
+        "Correct! <ul> creates an unordered list.",
+
+      q4:
+        "Correct! <main> represents the main content of a document.",
+
+      q5:
+        "Correct! <img> is used to display an image."
+
+    };
+
+
+    const quizForm =
+      document.getElementById("quizForm");
+
+    const checkBtn =
+      document.getElementById("checkBtn");
+
+    const resetBtn =
+      document.getElementById("resetBtn");
+
+    const resultBox =
+      document.getElementById("resultBox");
+
+    const scoreText =
+      document.getElementById("scoreText");
+
+    const resultMessage =
+      document.getElementById("resultMessage");
+
+    const progressText =
+      document.getElementById("progressText");
+
+    const progressBar =
+      document.getElementById("progressBar");
+
+
+    /* ==========================
+       UPDATE PROGRESS
+       ========================== */
+
+    function updateProgress() {
+
+      let answered = 0;
+
+      Object.keys(correctAnswers).forEach(function(question) {
+
+        const selected =
+          document.querySelector(
+            `input[name="${question}"]:checked`
+          );
+
+        if (selected) {
+          answered++;
+        }
+
+      });
+
+
+      progressText.textContent =
+        `${answered} / 5 answered`;
+
+
+      progressBar.style.width =
+        `${(answered / 5) * 100}%`;
+
+    }
+
+
+    /* ==========================
+       SELECTED ANSWER
+       ========================== */
+
+    document
+      .querySelectorAll(".answer-option input")
+      .forEach(function(input) {
+
+        input.addEventListener("change", function() {
+
+          const question =
+            input.closest(".quiz-question");
+
+
+          question
+            .querySelectorAll(".answer-option")
+            .forEach(function(option) {
+
+              option.classList.remove("selected");
+
+            });
+
+
+          input
+            .closest(".answer-option")
+            .classList.add("selected");
+
+
+          updateProgress();
+
+        });
+
+      });
+
+
+    /* ==========================
+       CHECK ANSWERS
+       ========================== */
+
+    checkBtn.addEventListener("click", function() {
+
+      let score = 0;
+
+
+      Object.keys(correctAnswers).forEach(function(questionName) {
+
+        const selected =
+          document.querySelector(
+            `input[name="${questionName}"]:checked`
+          );
+
+
+        const question =
+          document
+            .querySelector(
+              `input[name="${questionName}"]`
+            )
+            .closest(".quiz-question");
+
+
+        const feedback =
+          question.querySelector(".feedback");
+
+
+        question.classList.remove(
+          "correct-question",
+          "wrong-question"
+        );
+
+
+        if (!selected) {
+
+          feedback.textContent =
+            "Please select an answer.";
+
+          feedback.className =
+            "feedback warning-feedback";
+
+          question.classList.add(
+            "wrong-question"
+          );
+
+          return;
+
+        }
+
+
+        if (
+          selected.value ===
+          correctAnswers[questionName]
+        ) {
+
+          score++;
+
+
+          feedback.textContent =
+            explanations[questionName];
+
+
+          feedback.className =
+            "feedback correct-feedback";
+
+
+          question.classList.add(
+            "correct-question"
+          );
+
+        } else {
+
+          feedback.textContent =
+            "Incorrect. Try reviewing this HTML concept.";
+
+
+          feedback.className =
+            "feedback wrong-feedback";
+
+
+          question.classList.add(
+            "wrong-question"
+          );
+
+        }
+
+      });
+
+
+      scoreText.textContent =
+        `${score} / 5`;
+
+
+      if (score === 5) {
+
+        resultMessage.textContent =
+          "Excellent! You got every question correct!";
+
+      } else if (score >= 3) {
+
+        resultMessage.textContent =
+          "Good job! Review the questions you missed and try again.";
+
+      } else {
+
+        resultMessage.textContent =
+          "Keep practicing HTML and try the quiz again.";
+
+      }
+
+
+      resultBox.classList.add("show");
+
+
+      resultBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    });
+
+
+    /* ==========================
+       RESET
+       ========================== */
+
+    resetBtn.addEventListener("click", function() {
+
+      quizForm.reset();
+
+
+      document
+        .querySelectorAll(".answer-option")
+        .forEach(function(option) {
+
+          option.classList.remove("selected");
+
+        });
+
+
+      document
+        .querySelectorAll(".quiz-question")
+        .forEach(function(question) {
+
+          question.classList.remove(
+            "correct-question",
+            "wrong-question"
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".feedback")
+        .forEach(function(feedback) {
+
+          feedback.textContent = "";
+
+          feedback.className =
+            "feedback";
+
+        });
+
+
+      resultBox.classList.remove("show");
+
+
+      updateProgress();
+
+    });
+
+
+    updateProgress();
+
+  </script>
+
 </body>
 </html>
